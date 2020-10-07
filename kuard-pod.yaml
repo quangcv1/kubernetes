@@ -1,0 +1,18 @@
+//B1: apply deployment
+// kubectl apply -f kuard-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kuard //display on kubectl get pods
+spec:
+  containers:
+    - image: gcr.io/kuar-demo/kuard-amd64:blue
+      name: kuard //still no meaning
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+//B2: port-fowarding to access it
+//kubectl port-forward kuard 8080:8080
+//B3: check logs
+// kubectl logs kuard note: --previous flag will get logs from a previous instance of the container. This is useful, for example, if your containers are continuously restarting due to a problem at container startup.
