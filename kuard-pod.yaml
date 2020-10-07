@@ -3,11 +3,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kuard //display on kubectl get pods
+  name: kuard #display on kubectl get pods
 spec:
   containers:
     - image: gcr.io/kuar-demo/kuard-amd64:blue
-      name: kuard //still no meaning
+      name: kuard #still no meaning
       ports:
         - containerPort: 8080
           name: http
